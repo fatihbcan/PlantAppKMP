@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  One file, because Compose Multiplatform resources are per-module and this app is one module.
+  The grouping the Android build got from four separate `strings.xml` files is kept as comments
+  and name prefixes: `action_`/`error_` are the design system's, `home_`/`nav_` are home's, the
+  rest belong to onboarding.
+-->
+<resources>
+    <string name="app_name">PlantApp</string>
+    <string name="app_title">PlantApp</string>
+
+    <!-- Design system — shared across features. -->
+    <string name="action_retry">Try again</string>
+    <string name="action_clear_search">Clear search</string>
+
+    <string name="error_no_connection">No internet connection</string>
+    <string name="error_generic">Something went wrong</string>
+
+    <!-- Onboarding. -->
+    <string name="onboarding_welcome_title">Welcome to %1$s</string>
+    <string name="onboarding_welcome_body">Identify more than 3000+ plants and 88% accuracy.</string>
+    <string name="onboarding_welcome_cta">Get Started</string>
+    <string name="onboarding_welcome_legal">By tapping next, you are agreeing to PlantID Terms of Use &amp; Privacy Policy.</string>
+    <string name="onboarding_terms_of_use">Terms of Use</string>
+    <string name="onboarding_privacy_policy">Privacy Policy</string>
+
+    <string name="onboarding_identify_title">Take a photo to identify the plant!</string>
+    <string name="onboarding_identify_highlight">identify</string>
+    <string name="onboarding_identify_cta">Continue</string>
+
+    <string name="onboarding_diagnose_title">Get plant care guides</string>
+    <string name="onboarding_diagnose_highlight">care guides</string>
+    <string name="onboarding_diagnose_cta">Continue</string>
+
+    <string name="onboarding_page_indicator">Page %1$d of %2$d</string>
+
+    <!-- Paywall. -->
+    <string name="paywall_title">PlantApp Premium</string>
+    <string name="paywall_subtitle">Access All Features</string>
+    <string name="paywall_feature_unlimited_title">Unlimited</string>
+    <string name="paywall_feature_unlimited_body">Plant Identify</string>
+    <string name="paywall_feature_faster_title">Faster</string>
+    <string name="paywall_feature_faster_body">Process</string>
+    <string name="paywall_feature_detailed_title">Detailed</string>
+    <string name="paywall_feature_detailed_body">Plant care</string>
+    <string name="paywall_plan_monthly_title">1 Month</string>
+    <string name="paywall_plan_monthly_body">%1$s/month, auto renewable</string>
+    <string name="paywall_plan_yearly_title">1 Year</string>
+    <string name="paywall_plan_yearly_body">First 3 days free, then %1$s/year</string>
+    <string name="paywall_plan_badge">Save 50%</string>
+    <string name="paywall_cta">Try free for 3 days</string>
+    <string name="paywall_legal">After the 3-day free trial period you'll be charged %1$s per year unless you cancel before the trial expires. Yearly Subscription is Auto-Renewable</string>
+    <string name="paywall_terms">Terms</string>
+    <string name="paywall_privacy">Privacy</string>
+    <string name="paywall_restore">Restore</string>
+    <string name="paywall_close_semantics">Close and continue to home</string>
+    <string name="paywall_plans_unavailable">An unexpected error occurred. Please try again.</string>
+    <string name="paywall_completion_failed">We couldn't save your progress, but you can continue.</string>
+
+    <!-- Home. -->
+    <string name="home_greeting">Hi, plant lover!</string>
+    <string name="home_salutation">Good Afternoon! ⛅</string>
+    <string name="home_search_hint">Search for plants</string>
+    <string name="home_premium_banner_title">FREE Premium Available</string>
+    <string name="home_premium_banner_body">Tap to upgrade your account!</string>
+    <string name="home_questions_error">We couldn't load the articles.</string>
+    <string name="home_categories_error">We couldn't load the categories.</string>
+    <string name="home_search_empty">No plants match "%1$s".</string>
+    <string name="home_category_item_semantics">%1$s category</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_diagnose">Diagnose</string>
+    <string name="nav_scan">Scan</string>
+    <string name="nav_my_garden">My Garden</string>
+    <string name="nav_profile">Profile</string>
+</resources>

@@ -1,0 +1,86 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Version catalog for the Kotlin Multiplatform build of the Plant App case.
+#
+# The set below is the one Garmify ships with (Kotlin 2.2.20 / Compose
+# Multiplatform 1.9.0 / AGP 8.9.1), minus everything this app does not need and
+# plus Coil 3 for the remote images on home.
+#
+# Coupled pairs to mind when bumping:
+#
+#   Kotlin      ↔ Compose Compiler   the plugin is versioned by `kotlin`
+#   Kotlin      ↔ KLIBs              iOS deps must be built by a compiler ≤ ours
+#   Compose MP  ↔ lifecycle / nav    JetBrains ports, released in lockstep
+#   AGP         ↔ Gradle             AGP 8.9 needs Gradle 8.11+
+# ─────────────────────────────────────────────────────────────────────────────
+
+[versions]
+agp                     = "8.9.1"
+android-compileSdk      = "36"
+android-minSdk          = "26"
+android-targetSdk       = "36"
+androidx-activity       = "1.9.3"
+androidx-core           = "1.15.0"
+androidx-lifecycle      = "2.9.4"
+androidx-splashscreen   = "1.0.1"
+coil                    = "3.3.0"
+compose-multiplatform   = "1.9.0"
+datastore               = "1.1.1"
+detekt                  = "1.23.8"
+koin                    = "4.1.0"
+kotest                  = "5.9.1"
+kotlin                  = "2.2.20"
+kotlinx-collections     = "0.4.0"
+kotlinx-coroutines      = "1.10.2"
+kotlinx-serialization   = "1.9.0"
+ktor                    = "3.2.2"
+navigation-compose      = "2.9.0"
+turbine                 = "1.2.1"
+
+[libraries]
+# ─── AndroidX (androidMain only) ──────────────────────────────────────────
+androidx-activity-compose   = { module = "androidx.activity:activity-compose",              version.ref = "androidx-activity" }
+androidx-core-ktx           = { module = "androidx.core:core-ktx",                          version.ref = "androidx-core" }
+androidx-splashscreen       = { module = "androidx.core:core-splashscreen",                 version.ref = "androidx-splashscreen" }
+
+# ─── Lifecycle / ViewModel (JetBrains multiplatform ports) ────────────────
+androidx-lifecycle-viewmodel         = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel",         version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-compose   = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose",   version.ref = "androidx-lifecycle" }
+
+# ─── Navigation ───────────────────────────────────────────────────────────
+navigation-compose          = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
+
+# ─── Kotlin / coroutines ──────────────────────────────────────────────────
+kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinx-collections" }
+kotlinx-coroutines-core     = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core",   version.ref = "kotlinx-coroutines" }
+kotlinx-serialization-json  = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+
+# ─── DI ───────────────────────────────────────────────────────────────────
+koin-core                   = { module = "io.insert-koin:koin-core",                        version.ref = "koin" }
+koin-compose                = { module = "io.insert-koin:koin-compose",                     version.ref = "koin" }
+koin-compose-viewmodel      = { module = "io.insert-koin:koin-compose-viewmodel",           version.ref = "koin" }
+
+# ─── Networking ───────────────────────────────────────────────────────────
+ktor-client-core            = { module = "io.ktor:ktor-client-core",                        version.ref = "ktor" }
+ktor-client-okhttp          = { module = "io.ktor:ktor-client-okhttp",                      version.ref = "ktor" }
+ktor-client-darwin          = { module = "io.ktor:ktor-client-darwin",                      version.ref = "ktor" }
+
+# ─── Persistence ──────────────────────────────────────────────────────────
+datastore-preferences-core  = { module = "androidx.datastore:datastore-preferences-core",   version.ref = "datastore" }
+
+# ─── Image loading ────────────────────────────────────────────────────────
+coil-compose                = { module = "io.coil-kt.coil3:coil-compose",                   version.ref = "coil" }
+coil-network-ktor           = { module = "io.coil-kt.coil3:coil-network-ktor3",             version.ref = "coil" }
+
+# ─── Testing (commonTest — every one of these is multiplatform) ───────────
+kotlinx-coroutines-test     = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test",   version.ref = "kotlinx-coroutines" }
+kotest-assertions           = { module = "io.kotest:kotest-assertions-core",                version.ref = "kotest" }
+turbine                     = { module = "app.cash.turbine:turbine",                        version.ref = "turbine" }
+
+[plugins]
+androidApplication      = { id = "com.android.application",                    version.ref = "agp" }
+composeMultiplatform    = { id = "org.jetbrains.compose",                      version.ref = "compose-multiplatform" }
+composeCompiler         = { id = "org.jetbrains.kotlin.plugin.compose",        version.ref = "kotlin" }
+kotlinMultiplatform     = { id = "org.jetbrains.kotlin.multiplatform",         version.ref = "kotlin" }
+kotlinSerialization     = { id = "org.jetbrains.kotlin.plugin.serialization",  version.ref = "kotlin" }
+detekt                  = { id = "io.gitlab.arturbosch.detekt",                version.ref = "detekt" }

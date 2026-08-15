@@ -1,0 +1,3 @@
+# Copy to local.properties (git-ignored). Only the Android SDK location is needed;
+# the iOS build takes everything from Xcode.
+sdk.dir=/Users/<you>/Library/Android/sdk

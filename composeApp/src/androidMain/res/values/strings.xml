@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The launcher label only. Every string the UI shows lives in the shared
+         composeResources bundle instead; this one is read by the system before
+         any Kotlin runs. -->
+    <string name="app_name">PlantApp KMP</string>
+</resources>
